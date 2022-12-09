@@ -1,4 +1,14 @@
 {
     "welcome": "Welcome home",
-    "cakesAndSesserts": "Cakes and desserts 100% customized to the theme of your event, with home delivery service."
+    "cakesAndSesserts": "Cakes and desserts 100% customized to the theme of your event, with home delivery service.",
+    "vitrina": "Cakes to delivery",
+    "drawerVitrina1": "Showcase.",
+    "drawerVitrina2": "Desserts in showcase.",
+    "drawerTemp1": "Season.",
+    "drawerTemp2": "Seasonal desserts.",
+    "drawerSpec1": "Special cakes.",
+    "drawerSpec2": "Cakes to order.",
+    "drawerSesion": "Log Out.",
+    "appBar1": "Home."
+
 }

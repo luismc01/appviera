@@ -66,6 +66,9 @@ class _MaquetasState extends State<Fisicos> {
         children: [
           Expanded(
             child: LayoutBuilder(builder: (context, constraints) {
+              final widthSize = MediaQuery.of(context).size.width;
+
+              bool isDesktop(BuildContext context) => widthSize >= 600;
               final height = constraints.maxHeight;
               final width = constraints.maxWidth;
               final size = width * 0.6;
@@ -78,9 +81,11 @@ class _MaquetasState extends State<Fisicos> {
                     left: backgroundPosition,
                     right: backgroundPosition,
                     bottom: size / 2,
-                    child: const DecoratedBox(
+                    child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: ColorTheme.pinkLight,
+                        color: isDesktop(context)
+                            ? ColorTheme.redLight
+                            : ColorTheme.pinkLight,
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -373,5 +378,6 @@ class ColorTheme {
   static const Color pinkLight = Color.fromARGB(143, 168, 116, 178);
   static const Color pinkBlack = Color(0xffA48083);
   static const Color black = Color(0xff010001);
+  static const Color redLight = Color.fromARGB(211, 233, 130, 130);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
 }

@@ -42,24 +42,24 @@ class Home extends StatelessWidget {
               ListTile(
                 // textColor: Colors.amber,
                 leading: const Icon(Icons.cake),
-                title: const Text('Vitrina'),
-                subtitle: const Text('Postres de Vitrinas'),
+                title: Text(AppLocalizations.of(context).drawerVitrina1),
+                subtitle: Text(AppLocalizations.of(context).drawerVitrina2),
                 onTap: () {
                   Navigator.popAndPushNamed(context, Routes.maquetas);
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.breakfast_dining_outlined),
-                title: const Text('Temporada'),
-                subtitle: const Text('Pastel de temporada'),
+                title: Text(AppLocalizations.of(context).drawerTemp1),
+                subtitle: Text(AppLocalizations.of(context).drawerTemp2),
                 onTap: () {
                   Navigator.popAndPushNamed(context, Routes.fisicos);
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.cake_outlined),
-                title: const Text('Pasteles especiales'),
-                subtitle: const Text('Pasteles por pedido'),
+                title: Text(AppLocalizations.of(context).drawerSpec1),
+                subtitle: Text(AppLocalizations.of(context).drawerSpec2),
                 onTap: () {
                   Navigator.popAndPushNamed(context, Routes.digitales);
                 },
@@ -71,7 +71,7 @@ class Home extends StatelessWidget {
                     color: Colors.black,
                     size: 30,
                   ),
-                  title: const Text('Cerrar sesión'),
+                  title: Text(AppLocalizations.of(context).drawerSesion),
                   onTap: () {
                     Navigator.popAndPushNamed(context, Routes.login);
                   }),
@@ -79,7 +79,7 @@ class Home extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          title: const Text('Inicio'),
+          title: Text(AppLocalizations.of(context).appBar1),
           centerTitle: true,
           backgroundColor: ColorTheme.black,
         ),

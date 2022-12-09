@@ -1,4 +1,14 @@
 {
     "welcome": "Bienvenido al inicio",
-    "cakesAndSesserts": "Pasteles y postres 100% personalizados a la temática de tu evento, con servicio a domicilio."
+    "cakesAndSesserts": "Pasteles y postres 100% personalizados a la temática de tu evento, con servicio a domicilio.",
+    "vitrina": "Pasteles por pedido.",
+    "drawerVitrina1": "Vitrina.",
+    "drawerVitrina2": "Postres en vitrina.",
+    "drawerTemp1": "Temporada.",
+    "drawerTemp2": "Pastel de temporada.",
+    "drawerSpec1": "Pasteles escpeciales.",
+    "drawerSpec2": "Pasteles por pedido.",
+    "drawerSesion": "Cerrar sesión.",
+    "appBar1": "Inicio."
+
 }

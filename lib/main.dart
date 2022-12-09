@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Arqui App',
+      title: 'Asael Repostería',
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // English, no country code
         Locale('es', ''), // Spanish, no country code
       ],
-      locale: const Locale('en', ''),
+      locale: const Locale('es', ''),
       theme: ThemeData(primarySwatch: Colors.purple),
       home: const Login(),
       routes: Paginas.route,

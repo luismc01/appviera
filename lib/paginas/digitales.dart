@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 const _pizzaMovementDuration = Duration(milliseconds: 1600);
 
@@ -49,10 +50,16 @@ class _MaquetasState extends State<Digitales> {
 
   @override
   Widget build(BuildContext context) {
+    final widthSize = MediaQuery.of(context).size.width;
+    final hightSize = MediaQuery.of(context).size.height;
+
+    bool isDesktop(BuildContext context) => widthSize >= 600;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pasteles por pedido'),
-        backgroundColor: ColorTheme.pinkLight,
+        title: Text(AppLocalizations.of(context).vitrina),
+        backgroundColor:
+            isDesktop(context) ? ColorTheme.redLight : ColorTheme.pinkLight,
         leading: IconButton(
           onPressed: (() {
             if (Navigator.canPop(context)) {
@@ -66,6 +73,9 @@ class _MaquetasState extends State<Digitales> {
         children: [
           Expanded(
             child: LayoutBuilder(builder: (context, constraints) {
+              final widthSize = MediaQuery.of(context).size.width;
+
+              bool isDesktop(BuildContext context) => widthSize >= 600;
               final height = constraints.maxHeight;
               final width = constraints.maxWidth;
               final size = width * 0.6;
@@ -78,9 +88,11 @@ class _MaquetasState extends State<Digitales> {
                     left: backgroundPosition,
                     right: backgroundPosition,
                     bottom: size / 2,
-                    child: const DecoratedBox(
+                    child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: ColorTheme.pinkLight,
+                        color: isDesktop(context)
+                            ? ColorTheme.redLight
+                            : ColorTheme.pinkLight,
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -375,4 +387,5 @@ class ColorTheme {
   static const Color pinkBlack = Color(0xffA48083);
   static const Color black = Color(0xff010001);
   static const Color white = Color.fromARGB(255, 255, 255, 255);
+  static const Color redLight = Color.fromARGB(211, 233, 130, 130);
 }
