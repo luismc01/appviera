@@ -49,10 +49,16 @@ class _MaquetasState extends State<Maquetas> {
 
   @override
   Widget build(BuildContext context) {
+    final widthSize = MediaQuery.of(context).size.width;
+    final hightSize = MediaQuery.of(context).size.height;
+
+    bool isDesktop(BuildContext context) => widthSize >= 600;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Postres de Vitrina'),
-        backgroundColor: ColorTheme.pinkLight,
+        backgroundColor:
+            isDesktop(context) ? ColorTheme.redLight : ColorTheme.pinkLight,
         leading: IconButton(
           onPressed: (() {
             if (Navigator.canPop(context)) {
@@ -66,6 +72,9 @@ class _MaquetasState extends State<Maquetas> {
         children: [
           Expanded(
             child: LayoutBuilder(builder: (context, constraints) {
+              final widthSize = MediaQuery.of(context).size.width;
+
+              bool isDesktop(BuildContext context) => widthSize >= 600;
               final height = constraints.maxHeight;
               final width = constraints.maxWidth;
               final size = width * 0.6;
@@ -78,9 +87,11 @@ class _MaquetasState extends State<Maquetas> {
                     left: backgroundPosition,
                     right: backgroundPosition,
                     bottom: size / 2,
-                    child: const DecoratedBox(
+                    child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: ColorTheme.pinkLight,
+                        color: isDesktop(context)
+                            ? ColorTheme.redLight
+                            : ColorTheme.pinkLight,
                         shape: BoxShape.circle,
                       ),
                     ),
@@ -186,7 +197,9 @@ class _MaquetasState extends State<Maquetas> {
                                       vertical: 3.0,
                                     ),
                                     child: Container(
-                                      color: ColorTheme.pinkLight,
+                                      color: isDesktop(context)
+                                          ? ColorTheme.redLight
+                                          : ColorTheme.pinkLight,
                                       child: Padding(
                                         padding: const EdgeInsets.all(5.0),
                                         child: Text(
@@ -267,15 +280,19 @@ class _PizzaTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final widthSize = MediaQuery.of(context).size.width;
+    bool isDesktop(BuildContext context) => widthSize >= 600;
     return SizedBox(
       height: 60,
       child: Row(
         children: [
           InkWell(
             onTap: () => onTapLeft?.call(),
-            child: const CircleAvatar(
-              backgroundColor: ColorTheme.pinkLight,
-              child: Icon(
+            child: CircleAvatar(
+              backgroundColor: isDesktop(context)
+                  ? ColorTheme.redLight
+                  : ColorTheme.pinkLight,
+              child: const Icon(
                 Icons.arrow_back,
                 color: ColorTheme.pinkBlack,
               ),
@@ -297,9 +314,11 @@ class _PizzaTitle extends StatelessWidget {
           ),
           InkWell(
             onTap: () => onTapRight?.call(),
-            child: const CircleAvatar(
-              backgroundColor: ColorTheme.pinkLight,
-              child: Icon(
+            child: CircleAvatar(
+              backgroundColor: isDesktop(context)
+                  ? ColorTheme.redLight
+                  : ColorTheme.pinkLight,
+              child: const Icon(
                 Icons.arrow_forward,
                 color: ColorTheme.pinkBlack,
               ),
@@ -382,6 +401,7 @@ class Pizza {
 class ColorTheme {
   static const Color pink = Color(0xffC09A9C);
   static const Color pinkLight = Color.fromARGB(143, 168, 116, 178);
+  static const Color redLight = Color.fromARGB(211, 233, 130, 130);
   static const Color pinkBlack = Color(0xffA48083);
   static const Color black = Color(0xff010001);
   static const Color white = Color.fromARGB(255, 255, 255, 255);

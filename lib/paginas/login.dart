@@ -1,6 +1,8 @@
 import 'package:arquiapp/rutas/routes.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class Login extends StatelessWidget {
   const Login({super.key});
 
@@ -30,7 +32,7 @@ Widget cuerpo(BuildContext context) {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          inicio(),
+          inicio(context),
           campoUsuario(),
           campoClave(),
           botonEntrar(context),
@@ -40,10 +42,10 @@ Widget cuerpo(BuildContext context) {
   );
 } //fin del widget cuerpo
 
-Widget inicio() {
-  return const Text(
-    "Inicio de sesión",
-    style: TextStyle(
+Widget inicio(BuildContext context) {
+  return Text(
+    AppLocalizations.of(context).welcome,
+    style: const TextStyle(
         color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
   );
 } //fin del widget inicio

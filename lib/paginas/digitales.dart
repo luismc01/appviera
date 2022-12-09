@@ -186,7 +186,8 @@ class _MaquetasState extends State<Digitales> {
                                       vertical: 3.0,
                                     ),
                                     child: Container(
-                                      color: ColorTheme.pinkLight,
+                                      // color: ColorTheme.pinkLight,
+                                      color: Colors.red,
                                       child: Padding(
                                         padding: const EdgeInsets.all(5.0),
                                         child: Text(
