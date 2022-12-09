@@ -99,12 +99,9 @@ class Home extends StatelessWidget {
                 AppLocalizations.of(context).cakesAndSesserts,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.purple,
-                  backgroundColor: Colors.white70,
+                  fontFamily: 'Montserrat',
                   fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  letterSpacing: 2,
+                  fontSize: 25,
                 ),
               ),
             )
